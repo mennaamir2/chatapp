@@ -13,11 +13,11 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 10),
+    Future.delayed(const Duration(seconds: 4),
           () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const Login(),
+          builder: (context) => const LoginView(),
         ),
       ), );
 
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             const SizedBox(height: 70,),
             Image.asset(AssetImages.logo,scale: 1.4,),
-            SizedBox(height: 40,),
+            const SizedBox(height: 40,),
             Text("WhatsUp",style: Styles.textStyle24.copyWith(color: ColorApp.secondaryColor)),
             const SizedBox(height: 150,),
             Text("The best chat app of this century",style: Styles.textStyle15,)

@@ -1,6 +1,5 @@
 import 'package:chatapp1/core/themes/color_app.dart';
 import 'package:chatapp1/features/auth/presentation/views/login_view.dart';
-import 'package:chatapp1/features/auth/presentation/views/signup_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/themes/styles.dart';
 class LoginRow extends StatelessWidget {

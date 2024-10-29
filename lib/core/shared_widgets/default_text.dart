@@ -24,7 +24,14 @@ Widget defaultText({
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
-        prefixIcon: Icon(prefix),
+        prefixIcon: prefix != null
+            ? IconButton(
+          onPressed: pressed,
+          icon: Icon(
+            prefix,
+          ),
+        )
+            : null,
         suffixIcon: suffix != null
             ? IconButton(
                 onPressed: pressed,
