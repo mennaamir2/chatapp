@@ -11,4 +11,5 @@ abstract class Styles{
       fontWeight: FontWeight.w600,
       // color: colorApp.primary
   );
+
 }
