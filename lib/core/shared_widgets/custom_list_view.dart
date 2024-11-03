@@ -9,7 +9,8 @@ Widget customListView(
     bool msgNumb = false,
     ScrollPhysics? physics,
     required int itemCount,
-    Color?borderColor}) {
+    Color? borderColor,
+     Widget? trailing}) {
   return ListView.builder(
     shrinkWrap: true,
     physics: physics,
@@ -56,16 +57,17 @@ Widget customListView(
         leading: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(
-              color: Colors.green,
+            border:borderColor!=null? Border.all(
+              color:borderColor,
               width: 2,
-            ),
+            ):null
           ),
           child: const CircleAvatar(
             radius: 30,
             child: Icon(Icons.person),
           ),
         ),
+        trailing:trailing!=null?Icon(Icons.call):null ,
       );
     },
   );
