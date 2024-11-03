@@ -4,9 +4,17 @@ import 'package:flutter/material.dart';
 import '../themes/styles.dart';
 
 Widget customListView(
-    {required String title, required String subtitle, bool msgNumb = false}) {
+    {required String title,
+    required String subtitle,
+    bool msgNumb = false,
+    ScrollPhysics? physics,
+    required int itemCount,
+    Color? borderColor,
+     Widget? trailing}) {
   return ListView.builder(
-    itemCount: 20,
+    shrinkWrap: true,
+    physics: physics,
+    itemCount: itemCount,
     itemBuilder: (context, index) {
       return ListTile(
         title: Row(
@@ -46,10 +54,20 @@ Widget customListView(
               ),
           ],
         ),
-        leading: const CircleAvatar(
-          radius: 30,
-          child: Icon(Icons.person),
+        leading: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border:borderColor!=null? Border.all(
+              color:borderColor,
+              width: 2,
+            ):null
+          ),
+          child: const CircleAvatar(
+            radius: 30,
+            child: Icon(Icons.person),
+          ),
         ),
+        trailing:trailing!=null?Icon(Icons.call):null ,
       );
     },
   );
